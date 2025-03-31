@@ -1,9 +1,10 @@
 {
   "name": "react-img-crop",
-  "author": "github.com/darshan-trambadiya",
   "version": "1.0.0",
   "description": "An image cropping tool built with React, enabling users to trim images into circular or rectangular shapes and save the cropped results.",
   "private": true,
+  "author": "Darshan Trambadiya",
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build"
@@ -23,18 +24,15 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@iconify/react": "^4.0.1",
-    "@mui/material": "^5.11.10",
-    "@mui/styled-engine": "^6.3.1",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@mui/material": "^7.0.1",
+    "@mui/styled-engine": "^7.0.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-image-crop": "^11.0.7",
-    "react-scripts": "^5.0.0"
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.0",
-    "prettier": "^2.8.3"
+    "@babel/core": "^7.26.10"
   },
   "overrides": {
     "nth-check": "2.1.1"

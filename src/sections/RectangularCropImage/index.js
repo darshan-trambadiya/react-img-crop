@@ -1,11 +1,11 @@
 // external
 import { useRef, useState } from "react";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 
-// internal
-import Modal from "./Modal";
-import NoFileImage from "src/assets";
-import { DownloadImage } from "src/util";
+// components
+import Modal from "src/shared/components/Modal";
+import NoImage from "src/shared/components/NoImage";
+import DownloadImageButton from "src/shared/components/DownloadImageButton";
 
 const RectangularCropImage = () => {
   const avatarUrl = useRef("");
@@ -81,7 +81,7 @@ const RectangularCropImage = () => {
               />
             </>
           ) : (
-            <NoFileImage />
+            <NoImage />
           )}
 
           <Box
@@ -115,23 +115,16 @@ const RectangularCropImage = () => {
           />
 
           {avatarUrl.current && (
-            <Button
-              variant="contained"
-              sx={{ marginTop: "16px", backgroundColor: "#106470" }}
-              onClick={() =>
-                DownloadImage({
-                  uri: avatarUrl.current,
-                  name: "rectangular_crop_image",
-                })
-              }
-            >
-              Download
-            </Button>
+            <DownloadImageButton
+              uri={avatarUrl.current}
+              name="rectangular-crop-image"
+            />
           )}
         </Box>
       </Box>
       {modalOpen && (
         <Modal
+          title="Upload Image To Rectangular Crop"
           imgSrc={imgSrc}
           updateAvatar={updateAvatar}
           open={modalOpen}

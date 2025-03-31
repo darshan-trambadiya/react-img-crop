@@ -3,9 +3,8 @@ import React, { useState, useRef } from "react";
 import ReactCrop, { centerCrop, makeAspectCrop } from "react-image-crop";
 import { Box, Button, Slider, Typography } from "@mui/material";
 
-// internal
-import { canvasPreview } from "../canvasPreview";
-import { useDebounceEffect } from "../useDebounceEffect";
+// utils
+import { canvasPreview, useDebounceEffect } from "src/shared/utils";
 
 const ASPECT_RATIO = 1;
 const rotate = 0;
@@ -29,7 +28,6 @@ const centerAspectCrop = (mediaWidth, mediaHeight, aspect) =>
 const ImageCropper = ({ onClose, updateAvatar, imgSrc }) => {
   const previewCanvasRef = useRef(null);
   const imgRef = useRef(null);
-  const blobUrlRef = useRef("");
   const [crop, setCrop] = useState();
   const [completedCrop, setCompletedCrop] = useState();
   const [scale, setScale] = useState(1);

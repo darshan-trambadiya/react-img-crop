@@ -2,9 +2,9 @@
 import { Dialog, DialogTitle } from "@mui/material";
 
 // internal
-import ImageCropper from "./ImageCropper";
+import ImageCropper from "../../sections/BackgroundImage/ImageCropper";
 
-const Modal = ({ updateAvatar, onClose, open, imgSrc }) => {
+const Modal = ({ title, updateAvatar, onClose, open, imgSrc }) => {
   return (
     <Dialog
       fullWidth
@@ -14,7 +14,7 @@ const Modal = ({ updateAvatar, onClose, open, imgSrc }) => {
       onClose={onClose}
     >
       <DialogTitle sx={{ p: (theme) => theme.spacing(3, 3, 2, 3) }}>
-        Upload Image To Rectangular Crop
+        {title}
       </DialogTitle>
       <ImageCropper
         updateAvatar={updateAvatar}

@@ -3,9 +3,8 @@ import React, { useState, useRef } from "react";
 import { Box, Button, Slider, Typography } from "@mui/material";
 import ReactCrop, { centerCrop, makeAspectCrop } from "react-image-crop";
 
-// internal
-import { canvasPreview } from "../canvasPreview";
-import { useDebounceEffect } from "../useDebounceEffect";
+// utils
+import { canvasPreview, useDebounceEffect } from "src/shared/utils";
 
 const ASPECT_RATIO = 2.3 / 1;
 const rotate = 0;
