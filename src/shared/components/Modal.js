@@ -1,27 +1,17 @@
 // external
-import { Dialog, DialogTitle } from "@mui/material";
+import { Dialog, DialogTitle, DialogContent } from "@mui/material";
 
-// internal
-import ImageCropper from "../../sections/BackgroundImage/ImageCropper";
+const Modal = ({ title, children, open, onClose, maxWidth = "xs" }) => (
+  <Dialog
+    fullWidth
+    maxWidth={maxWidth}
+    open={open}
+    onClose={onClose}
+    slotProps={{ PaperProps: { sx: { p: 2 } } }}
+  >
+    <DialogTitle>{title}</DialogTitle>
+    <DialogContent>{children}</DialogContent>
+  </Dialog>
+);
 
-const Modal = ({ title, updateAvatar, onClose, open, imgSrc }) => {
-  return (
-    <Dialog
-      fullWidth
-      sx={{ minHeight: 300 }}
-      maxWidth="xs"
-      open={open}
-      onClose={onClose}
-    >
-      <DialogTitle sx={{ p: (theme) => theme.spacing(3, 3, 2, 3) }}>
-        {title}
-      </DialogTitle>
-      <ImageCropper
-        updateAvatar={updateAvatar}
-        onClose={onClose}
-        imgSrc={imgSrc}
-      />
-    </Dialog>
-  );
-};
 export default Modal;

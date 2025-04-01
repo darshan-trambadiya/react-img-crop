@@ -1,5 +1,11 @@
+:root {
+  --primary: #106470;
+  --background: #083238;
+  --white: #ffffff;
+}
+
 body {
   margin: 0;
-  background-color: #1ba7ba;
-  color: white;
+  background-color: var(--background);
+  color: var(--white);
 }

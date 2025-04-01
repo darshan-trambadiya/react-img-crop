@@ -2,19 +2,14 @@
 import { Button } from "@mui/material";
 
 // utils
-import { DownloadImage } from "src/shared/utils";
+import { downloadImage } from "../utils";
 
 const DownloadImageButton = ({ uri, name }) => {
   return (
     <Button
       variant="contained"
-      sx={{ marginTop: "16px", backgroundColor: "#106470" }}
-      onClick={() =>
-        DownloadImage({
-          uri,
-          name,
-        })
-      }
+      sx={{ marginTop: "16px", backgroundColor: "var(--primary)" }}
+      onClick={() => downloadImage(uri, name)}
     >
       Download
     </Button>
